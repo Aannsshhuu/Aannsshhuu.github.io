@@ -5,30 +5,127 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
   <title>Tuition Centre Review</title>
   <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #f8f9fa;
+      color: #343a40;
+      font-size: 1.2rem;
+    }
+
+    h1 {
+      font-family: 'Chalkboard SE', 'Comic Sans MS', cursive, sans-serif;
+      color: #007bff;
+      text-align: center;
+    }
+
+    h2 {
+      font-weight: bold;
+      text-align: left;
+      animation: highlight 2s ease-in-out infinite alternate;
+      padding-top: 20px; /* Add padding to create space between sections */
+    }
+
+    @keyframes highlight {
+      from {
+        background-color: rgba(148, 87, 235, 0.8); /* Purple */
+      }
+      to {
+        background-color: rgba(255, 192, 203, 0.8); /* Pink */
+      }
+    }
+
+    p {
+      font-family: 'Arial', sans-serif;
+    }
+
+    .navbar-brand img {
+      max-height: 50px; /* Adjust the maximum height of the logo */
+      max-width: 150px; /* Adjust the maximum width of the logo */
+      margin-right: 10px; /* Optional: Add some margin to the right of the logo */
+      border-radius: 50%; /* Apply circular cut */
+      overflow: hidden; /* Hide overflow content (in case the image is not perfectly square) */
+    }
+
+    .navbar-nav .nav-link {
+      font-size: 1.2rem; /* Reduce font size */
+      padding: 1rem 0.5rem; /* Reduce padding */
+      margin-right: 5px; /* Reduce margin between links */
+    }
+
     .tuition-image {
       float: right;
       max-width: 600px;
     }
+
     footer {
       background-color: #343a40;
       color: #f8f9fa;
       text-align: center;
       padding: 20px 0;
+      font-size: 1.2rem;
+    }
+
+    footer a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .swiper-container {
+      width: 100%;
+      height: 400px; /* Set the height of the gallery */
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensure images cover the entire slide */
+    }
+
+    @keyframes pinkToBlack {
+      0% { background-color: rgba(255, 192, 203, 0.8); color: black; }
+      50% { background-color: rgba(0, 0, 0, 0.8); color: pink; }
+      100% { background-color: rgba(255, 192, 203, 0.8); color: black; }
+    }
+
+    .highlight-animation {
+      animation: pinkToBlack 4s infinite alternate;
+      padding: 0 5px;
     }
   </style>
 </head>
 
 <body>
+
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="#">Tuition Centre</a>
+        <a class="navbar-brand" href="#" style="padding: 5px 15px;">
+          <img src="logo.png" alt="Tuition Centre Logo">
+        </a>
+        <a class="navbar-brand" href="#">How To Score</a>
+        
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
@@ -50,11 +147,28 @@
   </header>
 
   <div class="container">
-    <h1>Tuition Centre Review</h1>
-
-    <p>Welcome to our review of the Tuition Centre! In this article, we'll explore the exceptional features and benefits of our tuition services that aim for your academic success.</p>
-
-    <img src="tuition_image.jpg" alt="Tuition Centre" class="tuition-image">
+    
+    <p id="intro" style="margin-top: 20px;">Do you dream of scoring top marks in your exams? Hi there, I'm Anshu, and I've worked wonders for countless students, helping then from turning math nightmares into sweet dreams to making science so exciting you'll wish gravity was just a theory. Join me now on this thrilling adventure through the world of learning!</p>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        
+        <div class="swiper-slide">
+          <img src="gallery1.png" alt="Gallery Image 1">
+        </div>
+        <div class="swiper-slide">
+          <img src="gallery3.png" alt="Gallery Image 2">
+        </div>
+        <div class="swiper-slide">
+          <img src="gallery2.png" alt="Gallery Image 3">
+        </div>
+        <!-- Add more images as needed -->
+      </div>
+      <!-- Add pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Add navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
 
     <section id="section1">
       <h2>Class 9 & 10</h2>
@@ -67,7 +181,12 @@
     <section id="section2">
       <h2>Class 11 & 12</h2>
       <p>🚀 Advanced PCM Courses: Uncover the intricacies of Physics, Chemistry, and Mathematics.</p>
+      <p>📚 Comprehensive Study Material: Access to comprehensive study materials covering all syllabus topics.</p>
+      <p>🔬 Laboratory Sessions: Hands-on laboratory sessions to reinforce theoretical concepts and develop practical skills.</p>
+      <p>📊 Data Analysis Workshops: Learn data analysis techniques and applications relevant to science and mathematics.</p>
+      <p>💡 Problem-Solving Strategies: Master problem-solving strategies and techniques to excel in competitive exams.</p>
     </section>
+
 
     <section id="section3">
       <h2>Additional Offerings</h2>
@@ -87,12 +206,44 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2024 Tuition Centre. All rights reserved.</p>
-      <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Services</a></p>
+      <p>&copy; 2024 How-To-Score Tuition Centre. All rights reserved.</p>
+      <p><a href="#">Made for students with <span class="highlight-animation">Love❤️</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms of Services</a></p>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    function animateText(element) {
+      const text = element.textContent;
+      element.innerHTML = ''; // Clear the element's content
+      text.split(' ').forEach((word, index) => {
+        const span = document.createElement('span');
+        span.textContent = word + ' ';
+        span.style.opacity = 0;
+        span.style.animation = `fadeIn ${Math.random() * 2}s ease-out ${index * 0.5}s forwards`; // Adjust animation properties as needed
+        element.appendChild(span);
+      });
+    }
+
+    // Call the function to animate text in the intro paragraph
+    animateText(document.getElementById('intro'));
+
+    // Initialize Swiper for automatic slider gallery
+    var swiper = new Swiper('.swiper-container', {
+      autoplay: {
+        delay: 5000, // Auto play interval in milliseconds (5 seconds in this example)
+      },
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
 </body>
 
 </html>
