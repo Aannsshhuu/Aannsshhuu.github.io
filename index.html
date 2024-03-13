@@ -108,6 +108,35 @@
       animation: pinkToBlack 4s infinite alternate;
       padding: 0 5px;
     }
+
+    /* Media Query for Responsive Layout */
+    @media (max-width: 768px) {
+      .navbar-brand img {
+        max-height: 40px; /* Adjust the maximum height of the logo for smaller screens */
+        max-width: 120px; /* Adjust the maximum width of the logo for smaller screens */
+      }
+
+      .swiper-container {
+        height: 300px; /* Adjust the height of the gallery for smaller screens */
+      }
+
+      h1 {
+        font-size: 1.5rem; /* Adjust font size of h1 for smaller screens */
+      }
+
+      h2 {
+        font-size: 1.3rem; /* Adjust font size of h2 for smaller screens */
+      }
+
+      p {
+        font-size: 1rem; /* Adjust font size of paragraphs for smaller screens */
+      }
+
+      .navbar-nav .nav-link {
+        font-size: 1rem; /* Adjust font size of navigation links for smaller screens */
+        padding: 0.5rem 0.25rem; /* Adjust padding of navigation links for smaller screens */
+      }
+    }
   </style>
 </head>
 
